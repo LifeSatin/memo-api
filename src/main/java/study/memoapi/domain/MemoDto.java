@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor()
 public class MemoDto {
 
     private Long id;
@@ -16,5 +16,10 @@ public class MemoDto {
         this.id = memo.getId();
         this.title = memo.getTitle();
         this.content = memo.getContent();
+    }
+
+    public MemoDto(String title, String content) {
+        this.title = title;
+        this.content = content;
     }
 }
