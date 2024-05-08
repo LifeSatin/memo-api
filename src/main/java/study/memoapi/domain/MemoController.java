@@ -32,9 +32,8 @@ public class MemoController {
     //얘만 안됨
     @PatchMapping("/{memoId}")
     public MemoDto updateMemo(@PathVariable("memoId") Long memoId, @RequestBody MemoDto memoDto) {
-        Memo memo = memoService.findDtoById(memoId);
-        memo.update(memoDto);
-        return new MemoDto(memo);
+        MemoDto updatedMemo = memoService.updateMemo(memoId, memoDto);
+        return updatedMemo;
     }
 
     @DeleteMapping("/{memoId}")
